@@ -1,0 +1,4 @@
+pywebview==5.4
+pywin32
+opencv-python
+mediapipe

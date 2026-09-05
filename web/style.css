@@ -1,0 +1,466 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #2d2630;
+    --background-light: #342d37;
+    --purple: #9250ff;
+    --purple-hover: #a766ff;
+    --white: #ffffff;
+    --text-muted: #b9b1bb;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    min-width: 900px;
+    min-height: 600px;
+    overflow: hidden;
+    background: var(--background);
+    color: var(--white);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+button {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.55;
+}
+
+.page {
+    position: absolute;
+    inset: 0;
+    display: none;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.page.active-page {
+    display: flex;
+}
+
+#homePage,
+.presentation-page,
+.tutorial-page {
+    flex-direction: column;
+}
+
+.top-bar,
+.presentation-top-bar,
+.tutorial-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar {
+    justify-content: space-between;
+    padding: 18px 24px;
+}
+
+.exit-button,
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    padding: 7px 10px;
+    background: transparent;
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 7px;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.exit-button:hover,
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.version {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.home-content {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.brand h1 {
+    margin-bottom: 3px;
+    color: var(--purple);
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.brand p {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.home-actions {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.primary-button {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: 3px;
+    background: var(--purple);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background 0.2s ease, transform 0.0s ease;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-transition: background 0.2s ease, transform 0.0s ease;
+    -moz-transition: background 0.2s ease, transform 0.0s ease;
+    -ms-transition: background 0.2s ease, transform 0.0s ease;
+    -o-transition: background 0.2s ease, transform 0.0s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+    gap: 5px;
+    background: var(--purple-hover);
+    transform: translateY(-1px);
+    -webkit-transform: translateY(-1px);
+    -moz-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    -o-transform: translateY(-1px);
+}
+
+.primary-button:active:not(:disabled) {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+.github-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.github-icon {
+    width: 28px;
+    height: 28px;
+    fill: var(--text-muted);
+}
+
+.footer {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.presentation-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.control-button {
+    padding: 8px 4px;
+    background: transparent;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+}
+
+.control-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Open Palm di kiri, Fist di kanan */
+#nextSlideButton {
+    order: 1;
+}
+
+#previousSlideButton {
+    order: 2;
+}
+
+.presentation-top-bar,
+.tutorial-top-bar {
+    justify-content: space-between;
+    padding: 12px 18px;
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-right: 10px;
+    font-size: 10px;
+}
+
+.status-dot,
+.camera-dot {
+    border-radius: 50%;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: #41d96b;
+}
+
+.presentation-content {
+    width: min(850px, 90%);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation-content h1 {
+    margin-bottom: 18px;
+    font-size: 26px;
+    font-weight: 750;
+}
+
+.camera-container {
+    width: 100%;
+    height: auto;
+    max-width: 640px;
+    aspect-ratio: 4 / 3;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+.camera-feed {
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: contain;
+    background: #111111;
+}
+
+.camera-feed.active {
+    display: block;
+}
+
+.camera-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #111111;
+    font-size: 13px;
+    position: absolute;
+}
+
+.camera-placeholder.hidden {
+    display: none;
+}
+
+.camera-dot {
+    width: 12px;
+    height: 12px;
+    background: #d71920;
+}
+
+.camera-status {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.tutorial-page {
+    flex-direction: column;
+}
+
+.tutorial-top-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.tutorial-top-bar .back-button {
+    justify-self: start;
+}
+
+.tutorial-step-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 45px;
+    font-weight: 750;
+    transform: translateY(70px);
+    -webkit-transform: translateY(70px);
+    -moz-transform: translateY(70px);
+    -ms-transform: translateY(70px);
+    -o-transform: translateY(70px);
+}
+
+.tutorial-step-title span {
+    display: none;
+}
+
+.tutorial-content {
+    width: min(850px, 90%);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+    -moz-transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    -o-transform: translateY(60px);
+}
+
+.tutorial-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 25px;
+    align-items: center;
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+
+.tutorial-image-container {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-light);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tutorial-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tutorial-description h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 750;
+}
+
+.tutorial-description p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.tutorial-controls {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.tutorial-control-button {
+    width: fit-content;
+    padding: 8px 12px;
+    background: transparent;
+    color: var(--white);
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.tutorial-control-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#tutorialNextBottomButton {
+    justify-self: end;
+}
+
+.tutorial-indicator {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+@media (max-height: 650px) {
+    .camera-container {
+        height: 320px;
+    }
+
+    .tutorial-image-container {
+        height: 300px;
+    }
+
+    .brand {
+        margin-bottom: 20px;
+    }
+
+    .brand h1 {
+        font-size: 32px;
+    }
+}
