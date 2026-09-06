@@ -73,24 +73,24 @@ Touchless Presentation Controller
 
 ## 🛠️ Technologies
 
-•  Python
-•  pywebview
-•  OpenCV
-•  MediaPipe
-•  Microsoft PowerPoint COM
-•  HTML
-•  CSS
-•  JavaScript
-•  PyInstaller
+-  Python
+-  pywebview
+-  OpenCV
+-  MediaPipe
+-  Microsoft PowerPoint COM
+-  HTML
+-  CSS
+-  JavaScript
+-  PyInstaller
 
 
 ## ⚙️ Requirements
 
-Windows 10 / Windows 11
-Python 3.11
-Webcam
-Microsoft PowerPoint
-Internet connection for the initial MediaPipe model download if the model is not already available
+-  Windows 10 / Windows 11
+-  Python 3.11
+-  webcam
+-  Microsoft PowerPoint
+-  Internet connection for the initial MediaPipe model download if the model is not already available
 
 
 ## 🚀 Installation
@@ -120,8 +120,8 @@ Internet connection for the initial MediaPipe model download if the model is not
 4. Click Start Presentation.
 5. Position your hand inside the gesture zone.
 6. Use:
-   • 🖐️ Open Palm → Next Slide
-   • ✊ Fist → Previous Slide
+   - 🖐️ Open Palm → Next Slide
+   - ✊ Fist → Previous Slide
 7. Use the built-in tutorial if you need help understanding the controls.
 
 
@@ -139,12 +139,12 @@ This makes the interaction more intentional and suitable for real presentation e
 ## 🎯 Project Goals
 
 TPC was developed to explore the combination of:
-•  Computer vision
-•  Hand gesture recognition
-•  Human-computer interaction
-•  Desktop application development
-•  PowerPoint automation
-•  Python and web-based UI integration
+-  Computer vision
+-  Hand gesture recognition
+-  Human-computer interaction
+-  Desktop application development
+-  PowerPoint automation
+-  Python and web-based UI integration
 
 The main goal is to create a simple and practical presentation controller that allows presenters to control slides without physically interacting with their computer.
 
