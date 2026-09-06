@@ -34,6 +34,7 @@ class CameraController:
 
         self.required_stable_frames = 8
 
+        # Hold Cooldown
         self.last_action_time = 0
         self.cooldown = 0.8
 
